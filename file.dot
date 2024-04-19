@@ -1,23 +1,7 @@
 strict digraph "" {
 	node [label="\N"];
-	"compute_engine_16.ap_done_graphrename_0"	[color=black,
-		label="compute_engine_16.ap_done"];
-	Branch_graphrename_1	[color=black,
-		label=Branch];
-	"compute_engine_16.ap_done_graphrename_0" -> Branch_graphrename_1	[color=black];
-	Eq_graphrename_2	[color=black,
-		label=Eq];
-	Branch_graphrename_1 -> Eq_graphrename_2	[color=black,
-		label=COND];
-	compute_engine_16__rn0_ap_done	[color=black];
-	Branch_graphrename_1 -> compute_engine_16__rn0_ap_done	[color=black,
-		label=TRUE];
-	compute_engine_16__rn1_ap_done	[color=black];
-	Branch_graphrename_1 -> compute_engine_16__rn1_ap_done	[color=black,
-		label=FALSE];
-	"1'd1_graphrename_3"	[color=black,
-		label="1'd1"];
-	Eq_graphrename_2 -> "1'd1_graphrename_3"	[color=black];
-	compute_engine_16_ap_CS_fsm_state5	[color=black];
-	Eq_graphrename_2 -> compute_engine_16_ap_CS_fsm_state5	[color=black];
+	"compute_engine_16.grp_fu_532_p2_graphrename_0"	[color=black,
+		label="compute_engine_16.grp_fu_532_p2"];
+	compute_engine_16_mul_mul_16s_8s_24_4_1_U1_dout	[color=black];
+	"compute_engine_16.grp_fu_532_p2_graphrename_0" -> compute_engine_16_mul_mul_16s_8s_24_4_1_U1_dout	[color=black];
 }
