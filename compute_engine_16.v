@@ -48,7 +48,42 @@ module compute_engine_16 (
         b14,
         w15,
         b15,
-        ap_return
+        ap_return,
+        awvalid,
+        awaddr,
+        awid,
+        awlen,
+        awburst,
+        wvalid,
+        wdata,
+        wstrb,
+        wlast,
+        bready,
+        arvalid,
+        araddr,
+        arid,
+        arlen,
+        arburst,
+        rready,
+        awready,
+        wready,
+        bvalid,
+        bresp,
+        bid,
+        arready,
+        rvalid,
+        rdata,
+        rresp,
+        rid,
+        rlast,
+        alu_ctrl_addr,
+        alu_ctrl,
+        alu_in1_addr,
+        alu_in1,
+        alu_in2_addr,
+        alu_in2,
+        alu_result_addr,
+        alu_expected
 );
 
 parameter    ap_ST_fsm_state1 = 5'd1;
@@ -56,6 +91,21 @@ parameter    ap_ST_fsm_state2 = 5'd2;
 parameter    ap_ST_fsm_state3 = 5'd4;
 parameter    ap_ST_fsm_state4 = 5'd8;
 parameter    ap_ST_fsm_state5 = 5'd16;
+
+parameter LOOP_1 = 0;
+parameter WRITE_1 = 1;
+parameter WRITE_2 = 4'd2;
+parameter WRITE_3 = 4'd3;
+parameter WRITE_4 = 4'd4;
+parameter WRITE_5 = 4'd5;
+parameter WRITE_6 = 4'd6;
+parameter READ_1 = 4'd7;
+parameter READ_2 = 4'd8;
+parameter READ_3 = 4'd9;
+parameter READ_4 = 4'd10;
+parameter READ_5 = 4'd11;
+parameter READ_6 = 4'd12;
+parameter SUCCESS = 4'd13;
 
 input   ap_clk;
 input   ap_rst;
@@ -96,10 +146,56 @@ input  [15:0] b14;
 input  [7:0] w15;
 input  [15:0] b15;
 output  [31:0] ap_return;
+output reg awvalid;
+output reg [31:0] awaddr;
+output reg [3:0] awid;
+output reg [7:0] awlen;
+output reg [1:0] awburst;
+output reg wvalid;
+output reg [31:0] wdata;
+output reg [3:0] wstrb;
+output reg wlast;
+output reg bready;
+output reg arvalid;
+output reg [31:0] araddr;
+output reg [3:0] arid;
+output reg [7:0] arlen;
+output reg [1:0] arburst;
+output reg rready;
+input awready;
+input wready;
+input bvalid;
+input [1:0] bresp;
+input [3:0] bid;
+input arready;
+input rvalid;
+input [31:0] rdata;
+input [1:0] rresp;
+input [3:0] rid;
+input rlast;
+input [31:0] alu_ctrl_addr;
+input [31:0] alu_ctrl;
+input [31:0] alu_in1_addr;
+input [31:0] alu_in1;
+input [31:0] alu_in2_addr;
+input [31:0] alu_in2;
+input [31:0] alu_result_addr;
+input [31:0] alu_expected;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
+
+reg [7:0] count;
+reg start_count;
+reg kill_switch;
+reg [31:0] read_data;
+reg verify;
+reg wait_awready, wait_wready;
+reg [3:0] state;
+reg [31:0] expect;
+reg done;
+reg [2:0] in_num;
 
 (* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -410,10 +506,158 @@ mac_muladd_16s_8s_24s_25_4_1_U16(
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        read_data <= 0;
+        verify <= 0;
+        start_count <= 0;
+
+        awvalid <= 0;
+        awaddr <= 0;
+        awid <= 0;
+        awlen <= 0;
+        awburst <= 0;
+        wvalid <= 0;
+        wdata <= 0;
+        wstrb <= 0;
+        wlast <= 0;
+        bready <= 0;
+        arvalid <= 0;
+        araddr <= 0;
+        arid <= 0;
+        arlen <= 0;
+        arburst <= 0;
+        rready <= 0;
+
+        wait_awready <= 0;
+        wait_wready <= 0;
+        done <= 0;
+        in_num <= 0;
+
+        kill_switch <= 1;
+
         ap_CS_fsm <= ap_ST_fsm_state1;
+        state <= LOOP_1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
     end
+end
+always @ (*) begin
+    // Have a state in the beginning to act as a loop for the write
+    case (state)
+        LOOP_1: begin
+            if (done) state <= READ_1;
+            else state <= WRITE_1;
+        end
+        WRITE_1: begin
+            if (in_num == 2'd0) begin
+                awaddr <= alu_ctrl_addr;
+                wdata <= alu_ctrl;
+                in_num <= 2'd1;
+            end else if (in_num == 2'd1) begin
+                awaddr <= alu_in1_addr;
+                wdata <= alu_in1;
+                in_num = 2'd2;
+            end else if (in_num 2'd2) begin
+                awaddr <= alu_in2_addr;
+                wdata <= alu_in2;
+                done <= 1;
+            end
+            state <= WRITE_2;
+        end
+        WRITE_2: begin
+            awvalid <= 1;
+            awid <= 12;
+            awlen <= 0;
+            awburst <= 1;
+            wvalid <= 1;
+            wstrb <= 1;
+            wlast <= 1;
+            bready <= 0;
+            state <= WRITE_3;
+            wait_awready <= 0;
+            wait_wready <= 0;
+        end
+        WRITE_3: begin
+            if (awready) wait_awready <= 1;
+            if (wready) wait_wready <= 1;
+            if ((wait_awready & wait_wready) == 1) state <= WRITE_4;
+            else state <= WRITE_3;
+        end
+        WRITE_4: begin
+            wait_awready <= 0;
+            wait_wready <= 0;
+            awvalid <= 0;
+            awaddr <= 0;
+            awid <= 0;
+            awlen <= 0;
+            awburst <= 0;
+            wvalid <= 0;
+            wdata <= 0;
+            wstrb <= 0;
+            wlast <= 0;
+            if (bvalid) begin
+                if(!bresp) state <= WRITE_5;
+                else state <= WRITE_4;
+            end else state <= WRITE_4;
+        end
+        WRITE_5: begin
+            bready <= 1;
+            state <= WRITE_6;
+        end
+        WRITE_6: begin
+            bready <= 0;
+            start_count <= 1;
+            state <= LOOP_1;
+        end
+        READ_1: begin
+            araddr <= alu_result_addr;
+            expected <= alu_expected;
+            arvalid <= 0;
+            arid <= 0;
+            arlen <= 0;
+            arburst <= 0;
+            rready <= 0;
+            read_data <= 0;
+            verify <= 0;
+            state <= READ_2;
+        end
+        READ_2: begin
+            arvalid <= 1;
+            arid <= 12;
+            arlen <= 0;
+            arburst <= 1;
+            state <= READ_3;
+        end
+        READ_3: begin
+            if (arready) begin
+                araddr <= 0;
+                arvalid <= 0;
+                arid <= 0;
+                arlen <= 0;
+                arburst <= 0;
+                state <= READ_4;
+            end else state <= READ_3;
+        end
+        READ_4: begin
+            if (rvalid) begin
+                rready <= 1;
+                if (!rresp) read_data <= rdata;
+                if (rlast) state <= READ_5;
+                else state <= READ_4;
+            end else state <= READ_4;
+        end
+        READ_5: begin
+            rready <= 0;
+            state <= READ_6;
+        end
+        READ_6: begin
+            if (read_data == expected) begin
+                state <= SUCCESS;
+                verify <= 1;
+            end else state <= READ_1;
+        end
+        SUCCESS: state <= SUCCESS;
+        default: state <= WRITE_1;
+    endcase
 end
 
 always @ (*) begin
@@ -456,7 +700,11 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
+            case ({kill_switch, verify})
+                2'b01: ap_NS_fsm = ap_ST_fsm_state5;
+                2'b11: ap_NS_fsm = ap_ST_fsm_state4;
+                default: ap_NS_fsm = ap_ST_fsm_state1;
+            endcase
         end
         ap_ST_fsm_state5 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
@@ -465,6 +713,11 @@ always @ (*) begin
             ap_NS_fsm = 'bx;
         end
     endcase
+end
+
+always @(*) begin
+    if (verify) kill_switch <= 0;
+    else kill_switch <= 1;
 end
 
 assign add_ln1192_10_fu_478_p2 = ($signed(sext_ln1192_9_fu_475_p1) + $signed(sext_ln1192_8_fu_472_p1));
