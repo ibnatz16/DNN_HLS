@@ -1,0 +1,320 @@
+
+
+================================================================
+== Vitis HLS Report for 'compute_engine_16'
+================================================================
+* Date:           Tue May 14 15:45:46 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        conv_HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xazu2eg-sfvc784-1LV-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.230 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        4|        4|  40.000 ns|  40.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 1 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.69>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%b15_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b15"   --->   Operation 6 'read' 'b15_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%w15_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w15"   --->   Operation 7 'read' 'w15_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%b14_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b14"   --->   Operation 8 'read' 'b14_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%w14_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w14"   --->   Operation 9 'read' 'w14_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%b13_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b13"   --->   Operation 10 'read' 'b13_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%w13_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w13"   --->   Operation 11 'read' 'w13_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%b12_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b12"   --->   Operation 12 'read' 'b12_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%w12_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w12"   --->   Operation 13 'read' 'w12_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%b11_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b11"   --->   Operation 14 'read' 'b11_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%w11_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w11"   --->   Operation 15 'read' 'w11_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%b10_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b10"   --->   Operation 16 'read' 'b10_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%w10_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w10"   --->   Operation 17 'read' 'w10_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%b9_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b9"   --->   Operation 18 'read' 'b9_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%w9_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w9"   --->   Operation 19 'read' 'w9_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%b8_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b8"   --->   Operation 20 'read' 'b8_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%w8_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w8"   --->   Operation 21 'read' 'w8_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%b7_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b7"   --->   Operation 22 'read' 'b7_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%w7_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w7"   --->   Operation 23 'read' 'w7_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%b6_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b6"   --->   Operation 24 'read' 'b6_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%w6_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w6"   --->   Operation 25 'read' 'w6_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%b5_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b5"   --->   Operation 26 'read' 'b5_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%w5_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w5"   --->   Operation 27 'read' 'w5_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%b4_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b4"   --->   Operation 28 'read' 'b4_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%w4_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w4"   --->   Operation 29 'read' 'w4_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%b3_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b3"   --->   Operation 30 'read' 'b3_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%w3_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w3"   --->   Operation 31 'read' 'w3_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%b2_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b2"   --->   Operation 32 'read' 'b2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%w2_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w2"   --->   Operation 33 'read' 'w2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%b1_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b1"   --->   Operation 34 'read' 'b1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%w1_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w1"   --->   Operation 35 'read' 'w1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%b0_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %b0"   --->   Operation 36 'read' 'b0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%w0_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %w0"   --->   Operation 37 'read' 'w0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%sext_ln1116_1 = sext i8 %w1_read"   --->   Operation 38 'sext' 'sext_ln1116_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%sext_ln1118_1 = sext i16 %b1_read"   --->   Operation 39 'sext' 'sext_ln1118_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_1 = mul i24 %sext_ln1118_1, i24 %sext_ln1116_1"   --->   Operation 40 'mul' 'r_V_1' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%sext_ln1116_2 = sext i8 %w2_read"   --->   Operation 41 'sext' 'sext_ln1116_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%sext_ln1118_2 = sext i16 %b2_read"   --->   Operation 42 'sext' 'sext_ln1118_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_2 = mul i24 %sext_ln1118_2, i24 %sext_ln1116_2"   --->   Operation 43 'mul' 'r_V_2' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%sext_ln1116_4 = sext i8 %w4_read"   --->   Operation 44 'sext' 'sext_ln1116_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%sext_ln1118_4 = sext i16 %b4_read"   --->   Operation 45 'sext' 'sext_ln1118_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_4 = mul i24 %sext_ln1118_4, i24 %sext_ln1116_4"   --->   Operation 46 'mul' 'r_V_4' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%sext_ln1116_6 = sext i8 %w6_read"   --->   Operation 47 'sext' 'sext_ln1116_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%sext_ln1118_6 = sext i16 %b6_read"   --->   Operation 48 'sext' 'sext_ln1118_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_6 = mul i24 %sext_ln1118_6, i24 %sext_ln1116_6"   --->   Operation 49 'mul' 'r_V_6' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%sext_ln1116_8 = sext i8 %w8_read"   --->   Operation 50 'sext' 'sext_ln1116_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%sext_ln1118_8 = sext i16 %b8_read"   --->   Operation 51 'sext' 'sext_ln1118_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_8 = mul i24 %sext_ln1118_8, i24 %sext_ln1116_8"   --->   Operation 52 'mul' 'r_V_8' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%sext_ln1116_10 = sext i8 %w10_read"   --->   Operation 53 'sext' 'sext_ln1116_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%sext_ln1118_10 = sext i16 %b10_read"   --->   Operation 54 'sext' 'sext_ln1118_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_10 = mul i24 %sext_ln1118_10, i24 %sext_ln1116_10"   --->   Operation 55 'mul' 'r_V_10' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%sext_ln1116_12 = sext i8 %w12_read"   --->   Operation 56 'sext' 'sext_ln1116_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%sext_ln1118_12 = sext i16 %b12_read"   --->   Operation 57 'sext' 'sext_ln1118_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_12 = mul i24 %sext_ln1118_12, i24 %sext_ln1116_12"   --->   Operation 58 'mul' 'r_V_12' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%sext_ln1116_14 = sext i8 %w14_read"   --->   Operation 59 'sext' 'sext_ln1116_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%sext_ln1118_14 = sext i16 %b14_read"   --->   Operation 60 'sext' 'sext_ln1118_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [4/4] (0.69ns) (root node of the DSP)   --->   "%r_V_14 = mul i24 %sext_ln1118_14, i24 %sext_ln1116_14"   --->   Operation 61 'mul' 'r_V_14' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 2 <SV = 1> <Delay = 1.08>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%sext_ln1116 = sext i8 %w0_read"   --->   Operation 62 'sext' 'sext_ln1116' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%sext_ln1118 = sext i16 %b0_read"   --->   Operation 63 'sext' 'sext_ln1118' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_1)   --->   "%r_V = mul i24 %sext_ln1118, i24 %sext_ln1116"   --->   Operation 64 'mul' 'r_V' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 65 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_1 = mul i24 %sext_ln1118_1, i24 %sext_ln1116_1"   --->   Operation 65 'mul' 'r_V_1' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 66 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_2 = mul i24 %sext_ln1118_2, i24 %sext_ln1116_2"   --->   Operation 66 'mul' 'r_V_2' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%sext_ln1116_3 = sext i8 %w3_read"   --->   Operation 67 'sext' 'sext_ln1116_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%sext_ln1118_3 = sext i16 %b3_read"   --->   Operation 68 'sext' 'sext_ln1118_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_2)   --->   "%r_V_3 = mul i24 %sext_ln1118_3, i24 %sext_ln1116_3"   --->   Operation 69 'mul' 'r_V_3' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 70 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_4 = mul i24 %sext_ln1118_4, i24 %sext_ln1116_4"   --->   Operation 70 'mul' 'r_V_4' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%sext_ln1116_5 = sext i8 %w5_read"   --->   Operation 71 'sext' 'sext_ln1116_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%sext_ln1118_5 = sext i16 %b5_read"   --->   Operation 72 'sext' 'sext_ln1118_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_4)   --->   "%r_V_5 = mul i24 %sext_ln1118_5, i24 %sext_ln1116_5"   --->   Operation 73 'mul' 'r_V_5' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 74 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_6 = mul i24 %sext_ln1118_6, i24 %sext_ln1116_6"   --->   Operation 74 'mul' 'r_V_6' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%sext_ln1116_7 = sext i8 %w7_read"   --->   Operation 75 'sext' 'sext_ln1116_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%sext_ln1118_7 = sext i16 %b7_read"   --->   Operation 76 'sext' 'sext_ln1118_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_5)   --->   "%r_V_7 = mul i24 %sext_ln1118_7, i24 %sext_ln1116_7"   --->   Operation 77 'mul' 'r_V_7' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 78 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_8 = mul i24 %sext_ln1118_8, i24 %sext_ln1116_8"   --->   Operation 78 'mul' 'r_V_8' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%sext_ln1116_9 = sext i8 %w9_read"   --->   Operation 79 'sext' 'sext_ln1116_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%sext_ln1118_9 = sext i16 %b9_read"   --->   Operation 80 'sext' 'sext_ln1118_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_8)   --->   "%r_V_9 = mul i24 %sext_ln1118_9, i24 %sext_ln1116_9"   --->   Operation 81 'mul' 'r_V_9' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 82 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_10 = mul i24 %sext_ln1118_10, i24 %sext_ln1116_10"   --->   Operation 82 'mul' 'r_V_10' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%sext_ln1116_11 = sext i8 %w11_read"   --->   Operation 83 'sext' 'sext_ln1116_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%sext_ln1118_11 = sext i16 %b11_read"   --->   Operation 84 'sext' 'sext_ln1118_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_9)   --->   "%r_V_11 = mul i24 %sext_ln1118_11, i24 %sext_ln1116_11"   --->   Operation 85 'mul' 'r_V_11' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 86 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_12 = mul i24 %sext_ln1118_12, i24 %sext_ln1116_12"   --->   Operation 86 'mul' 'r_V_12' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln1116_13 = sext i8 %w13_read"   --->   Operation 87 'sext' 'sext_ln1116_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%sext_ln1118_13 = sext i16 %b13_read"   --->   Operation 88 'sext' 'sext_ln1118_13' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_11)   --->   "%r_V_13 = mul i24 %sext_ln1118_13, i24 %sext_ln1116_13"   --->   Operation 89 'mul' 'r_V_13' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 90 [3/4] (0.69ns) (root node of the DSP)   --->   "%r_V_14 = mul i24 %sext_ln1118_14, i24 %sext_ln1116_14"   --->   Operation 90 'mul' 'r_V_14' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%sext_ln1116_15 = sext i8 %w15_read"   --->   Operation 91 'sext' 'sext_ln1116_15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%sext_ln1118_15 = sext i16 %b15_read"   --->   Operation 92 'sext' 'sext_ln1118_15' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [3/3] (1.08ns) (grouped into DSP with root node add_ln1192_12)   --->   "%r_V_15 = mul i24 %sext_ln1118_15, i24 %sext_ln1116_15"   --->   Operation 93 'mul' 'r_V_15' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 3 <SV = 2> <Delay = 1.08>
+ST_3 : Operation 94 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_1)   --->   "%r_V = mul i24 %sext_ln1118, i24 %sext_ln1116"   --->   Operation 94 'mul' 'r_V' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 95 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_1 = mul i24 %sext_ln1118_1, i24 %sext_ln1116_1"   --->   Operation 95 'mul' 'r_V_1' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 96 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_2 = mul i24 %sext_ln1118_2, i24 %sext_ln1116_2"   --->   Operation 96 'mul' 'r_V_2' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 97 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_2)   --->   "%r_V_3 = mul i24 %sext_ln1118_3, i24 %sext_ln1116_3"   --->   Operation 97 'mul' 'r_V_3' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 98 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_4 = mul i24 %sext_ln1118_4, i24 %sext_ln1116_4"   --->   Operation 98 'mul' 'r_V_4' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 99 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_4)   --->   "%r_V_5 = mul i24 %sext_ln1118_5, i24 %sext_ln1116_5"   --->   Operation 99 'mul' 'r_V_5' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 100 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_6 = mul i24 %sext_ln1118_6, i24 %sext_ln1116_6"   --->   Operation 100 'mul' 'r_V_6' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 101 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_5)   --->   "%r_V_7 = mul i24 %sext_ln1118_7, i24 %sext_ln1116_7"   --->   Operation 101 'mul' 'r_V_7' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 102 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_8 = mul i24 %sext_ln1118_8, i24 %sext_ln1116_8"   --->   Operation 102 'mul' 'r_V_8' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 103 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_8)   --->   "%r_V_9 = mul i24 %sext_ln1118_9, i24 %sext_ln1116_9"   --->   Operation 103 'mul' 'r_V_9' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 104 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_10 = mul i24 %sext_ln1118_10, i24 %sext_ln1116_10"   --->   Operation 104 'mul' 'r_V_10' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 105 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_9)   --->   "%r_V_11 = mul i24 %sext_ln1118_11, i24 %sext_ln1116_11"   --->   Operation 105 'mul' 'r_V_11' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 106 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_12 = mul i24 %sext_ln1118_12, i24 %sext_ln1116_12"   --->   Operation 106 'mul' 'r_V_12' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 107 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_11)   --->   "%r_V_13 = mul i24 %sext_ln1118_13, i24 %sext_ln1116_13"   --->   Operation 107 'mul' 'r_V_13' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 108 [2/4] (0.69ns) (root node of the DSP)   --->   "%r_V_14 = mul i24 %sext_ln1118_14, i24 %sext_ln1116_14"   --->   Operation 108 'mul' 'r_V_14' <Predicate = true> <Delay = 0.69> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 109 [2/3] (1.08ns) (grouped into DSP with root node add_ln1192_12)   --->   "%r_V_15 = mul i24 %sext_ln1118_15, i24 %sext_ln1116_15"   --->   Operation 109 'mul' 'r_V_15' <Predicate = true> <Delay = 1.08> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 0.83>
+ST_4 : Operation 110 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_1)   --->   "%r_V = mul i24 %sext_ln1118, i24 %sext_ln1116"   --->   Operation 110 'mul' 'r_V' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 111 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_1 = mul i24 %sext_ln1118_1, i24 %sext_ln1116_1"   --->   Operation 111 'mul' 'r_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 112 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_2 = mul i24 %sext_ln1118_2, i24 %sext_ln1116_2"   --->   Operation 112 'mul' 'r_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 113 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_2)   --->   "%r_V_3 = mul i24 %sext_ln1118_3, i24 %sext_ln1116_3"   --->   Operation 113 'mul' 'r_V_3' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 114 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_4 = mul i24 %sext_ln1118_4, i24 %sext_ln1116_4"   --->   Operation 114 'mul' 'r_V_4' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 115 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_4)   --->   "%r_V_5 = mul i24 %sext_ln1118_5, i24 %sext_ln1116_5"   --->   Operation 115 'mul' 'r_V_5' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 116 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_6 = mul i24 %sext_ln1118_6, i24 %sext_ln1116_6"   --->   Operation 116 'mul' 'r_V_6' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 117 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_5)   --->   "%r_V_7 = mul i24 %sext_ln1118_7, i24 %sext_ln1116_7"   --->   Operation 117 'mul' 'r_V_7' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 118 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_8 = mul i24 %sext_ln1118_8, i24 %sext_ln1116_8"   --->   Operation 118 'mul' 'r_V_8' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 119 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_8)   --->   "%r_V_9 = mul i24 %sext_ln1118_9, i24 %sext_ln1116_9"   --->   Operation 119 'mul' 'r_V_9' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 120 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_10 = mul i24 %sext_ln1118_10, i24 %sext_ln1116_10"   --->   Operation 120 'mul' 'r_V_10' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 121 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_9)   --->   "%r_V_11 = mul i24 %sext_ln1118_11, i24 %sext_ln1116_11"   --->   Operation 121 'mul' 'r_V_11' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 122 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_12 = mul i24 %sext_ln1118_12, i24 %sext_ln1116_12"   --->   Operation 122 'mul' 'r_V_12' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 123 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_11)   --->   "%r_V_13 = mul i24 %sext_ln1118_13, i24 %sext_ln1116_13"   --->   Operation 123 'mul' 'r_V_13' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 124 [1/4] (0.00ns) (root node of the DSP)   --->   "%r_V_14 = mul i24 %sext_ln1118_14, i24 %sext_ln1116_14"   --->   Operation 124 'mul' 'r_V_14' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 125 [1/3] (0.00ns) (grouped into DSP with root node add_ln1192_12)   --->   "%r_V_15 = mul i24 %sext_ln1118_15, i24 %sext_ln1116_15"   --->   Operation 125 'mul' 'r_V_15' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 126 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_1)   --->   "%r_V_1_cast = sext i24 %r_V"   --->   Operation 126 'sext' 'r_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%r_V_3_cast = sext i24 %r_V_1"   --->   Operation 127 'sext' 'r_V_3_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (0.00ns)   --->   "%r_V_5_cast = sext i24 %r_V_2"   --->   Operation 128 'sext' 'r_V_5_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 129 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_2)   --->   "%r_V_7_cast = sext i24 %r_V_3"   --->   Operation 129 'sext' 'r_V_7_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 130 [1/1] (0.00ns)   --->   "%r_V_9_cast = sext i24 %r_V_4"   --->   Operation 130 'sext' 'r_V_9_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 131 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_4)   --->   "%r_V_11_cast = sext i24 %r_V_5"   --->   Operation 131 'sext' 'r_V_11_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 132 [1/1] (0.00ns)   --->   "%r_V_13_cast = sext i24 %r_V_6"   --->   Operation 132 'sext' 'r_V_13_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 133 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_5)   --->   "%r_V_15_cast = sext i24 %r_V_7"   --->   Operation 133 'sext' 'r_V_15_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 134 [1/1] (0.00ns)   --->   "%r_V_17_cast = sext i24 %r_V_8"   --->   Operation 134 'sext' 'r_V_17_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 135 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_8)   --->   "%r_V_19_cast = sext i24 %r_V_9"   --->   Operation 135 'sext' 'r_V_19_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 136 [1/1] (0.00ns)   --->   "%r_V_21_cast = sext i24 %r_V_10"   --->   Operation 136 'sext' 'r_V_21_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 137 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_9)   --->   "%r_V_23_cast = sext i24 %r_V_11"   --->   Operation 137 'sext' 'r_V_23_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 138 [1/1] (0.00ns)   --->   "%r_V_25_cast = sext i24 %r_V_12"   --->   Operation 138 'sext' 'r_V_25_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 139 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_11)   --->   "%r_V_27_cast = sext i24 %r_V_13"   --->   Operation 139 'sext' 'r_V_27_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 140 [1/1] (0.00ns)   --->   "%r_V_29_cast = sext i24 %r_V_14"   --->   Operation 140 'sext' 'r_V_29_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 141 [1/1] (0.00ns) (grouped into DSP with root node add_ln1192_12)   --->   "%sext_ln1192 = sext i24 %r_V_15"   --->   Operation 141 'sext' 'sext_ln1192' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 142 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_1 = add i25 %r_V_3_cast, i25 %r_V_1_cast"   --->   Operation 142 'add' 'add_ln1192_1' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 143 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_2 = add i25 %r_V_5_cast, i25 %r_V_7_cast"   --->   Operation 143 'add' 'add_ln1192_2' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 144 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_4 = add i25 %r_V_9_cast, i25 %r_V_11_cast"   --->   Operation 144 'add' 'add_ln1192_4' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 145 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_5 = add i25 %r_V_13_cast, i25 %r_V_15_cast"   --->   Operation 145 'add' 'add_ln1192_5' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 146 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_8 = add i25 %r_V_17_cast, i25 %r_V_19_cast"   --->   Operation 146 'add' 'add_ln1192_8' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 147 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_9 = add i25 %r_V_21_cast, i25 %r_V_23_cast"   --->   Operation 147 'add' 'add_ln1192_9' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 148 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_11 = add i25 %r_V_25_cast, i25 %r_V_27_cast"   --->   Operation 148 'add' 'add_ln1192_11' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 149 [2/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_12 = add i25 %r_V_29_cast, i25 %sext_ln1192"   --->   Operation 149 'add' 'add_ln1192_12' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 5 <SV = 4> <Delay = 4.22>
+ST_5 : Operation 150 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_1 = add i25 %r_V_3_cast, i25 %r_V_1_cast"   --->   Operation 150 'add' 'add_ln1192_1' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 151 [1/1] (0.00ns)   --->   "%sext_ln1192_1 = sext i25 %add_ln1192_1"   --->   Operation 151 'sext' 'sext_ln1192_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 152 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_2 = add i25 %r_V_5_cast, i25 %r_V_7_cast"   --->   Operation 152 'add' 'add_ln1192_2' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 153 [1/1] (0.00ns)   --->   "%sext_ln1192_2 = sext i25 %add_ln1192_2"   --->   Operation 153 'sext' 'sext_ln1192_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 154 [1/1] (1.12ns)   --->   "%add_ln1192_3 = add i26 %sext_ln1192_2, i26 %sext_ln1192_1"   --->   Operation 154 'add' 'add_ln1192_3' <Predicate = true> <Delay = 1.12> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 155 [1/1] (0.00ns)   --->   "%sext_ln1192_3 = sext i26 %add_ln1192_3"   --->   Operation 155 'sext' 'sext_ln1192_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 156 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_4 = add i25 %r_V_9_cast, i25 %r_V_11_cast"   --->   Operation 156 'add' 'add_ln1192_4' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 157 [1/1] (0.00ns)   --->   "%sext_ln1192_4 = sext i25 %add_ln1192_4"   --->   Operation 157 'sext' 'sext_ln1192_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 158 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_5 = add i25 %r_V_13_cast, i25 %r_V_15_cast"   --->   Operation 158 'add' 'add_ln1192_5' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 159 [1/1] (0.00ns)   --->   "%sext_ln1192_5 = sext i25 %add_ln1192_5"   --->   Operation 159 'sext' 'sext_ln1192_5' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 160 [1/1] (1.12ns)   --->   "%add_ln1192_6 = add i26 %sext_ln1192_5, i26 %sext_ln1192_4"   --->   Operation 160 'add' 'add_ln1192_6' <Predicate = true> <Delay = 1.12> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 161 [1/1] (0.00ns)   --->   "%sext_ln1192_6 = sext i26 %add_ln1192_6"   --->   Operation 161 'sext' 'sext_ln1192_6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 162 [1/1] (1.13ns)   --->   "%add_ln1192_7 = add i27 %sext_ln1192_6, i27 %sext_ln1192_3"   --->   Operation 162 'add' 'add_ln1192_7' <Predicate = true> <Delay = 1.13> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 163 [1/1] (0.00ns)   --->   "%sext_ln1192_7 = sext i27 %add_ln1192_7"   --->   Operation 163 'sext' 'sext_ln1192_7' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 164 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_8 = add i25 %r_V_17_cast, i25 %r_V_19_cast"   --->   Operation 164 'add' 'add_ln1192_8' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 165 [1/1] (0.00ns)   --->   "%sext_ln1192_8 = sext i25 %add_ln1192_8"   --->   Operation 165 'sext' 'sext_ln1192_8' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 166 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_9 = add i25 %r_V_21_cast, i25 %r_V_23_cast"   --->   Operation 166 'add' 'add_ln1192_9' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 167 [1/1] (0.00ns)   --->   "%sext_ln1192_9 = sext i25 %add_ln1192_9"   --->   Operation 167 'sext' 'sext_ln1192_9' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 168 [1/1] (1.12ns)   --->   "%add_ln1192_10 = add i26 %sext_ln1192_9, i26 %sext_ln1192_8"   --->   Operation 168 'add' 'add_ln1192_10' <Predicate = true> <Delay = 1.12> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 169 [1/1] (0.00ns)   --->   "%sext_ln1192_10 = sext i26 %add_ln1192_10"   --->   Operation 169 'sext' 'sext_ln1192_10' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 170 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_11 = add i25 %r_V_25_cast, i25 %r_V_27_cast"   --->   Operation 170 'add' 'add_ln1192_11' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 171 [1/1] (0.00ns)   --->   "%sext_ln1192_11 = sext i25 %add_ln1192_11"   --->   Operation 171 'sext' 'sext_ln1192_11' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 172 [1/2] (0.83ns) (root node of the DSP)   --->   "%add_ln1192_12 = add i25 %r_V_29_cast, i25 %sext_ln1192"   --->   Operation 172 'add' 'add_ln1192_12' <Predicate = true> <Delay = 0.83> <CoreInst = "DSP48">   --->   Core 127 'DSP48' <Latency = 3> <II = 1> <Delay = 0.69> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 173 [1/1] (0.00ns)   --->   "%sext_ln1192_12 = sext i25 %add_ln1192_12"   --->   Operation 173 'sext' 'sext_ln1192_12' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 174 [1/1] (1.12ns)   --->   "%add_ln1192_13 = add i26 %sext_ln1192_12, i26 %sext_ln1192_11"   --->   Operation 174 'add' 'add_ln1192_13' <Predicate = true> <Delay = 1.12> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 175 [1/1] (0.00ns)   --->   "%sext_ln1192_13 = sext i26 %add_ln1192_13"   --->   Operation 175 'sext' 'sext_ln1192_13' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 176 [1/1] (1.13ns)   --->   "%add_ln1192_14 = add i27 %sext_ln1192_13, i27 %sext_ln1192_10"   --->   Operation 176 'add' 'add_ln1192_14' <Predicate = true> <Delay = 1.13> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 177 [1/1] (0.00ns)   --->   "%sext_ln1192_14 = sext i27 %add_ln1192_14"   --->   Operation 177 'sext' 'sext_ln1192_14' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 178 [1/1] (1.14ns)   --->   "%add_ln1192 = add i28 %sext_ln1192_14, i28 %sext_ln1192_7"   --->   Operation 178 'add' 'add_ln1192' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 179 [1/1] (0.00ns)   --->   "%p_Val2_s = bitconcatenate i31 @_ssdm_op_BitConcatenate.i31.i28.i3, i28 %add_ln1192, i3 0"   --->   Operation 179 'bitconcatenate' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 180 [1/1] (0.00ns)   --->   "%ret_ln71 = ret i31 %p_Val2_s" [CONV-IP/conv_standard_1x1.cc:71]   --->   Operation 180 'ret' 'ret_ln71' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.698ns
+The critical path consists of the following:
+	wire read on port 'b1' [61]  (0 ns)
+	'mul' operation of DSP[70] ('r.V') [70]  (0.698 ns)
+
+ <State 2>: 1.09ns
+The critical path consists of the following:
+	'mul' operation of DSP[129] ('r.V') [67]  (1.09 ns)
+
+ <State 3>: 1.09ns
+The critical path consists of the following:
+	'mul' operation of DSP[129] ('r.V') [67]  (1.09 ns)
+
+ <State 4>: 0.831ns
+The critical path consists of the following:
+	'mul' operation of DSP[129] ('r.V') [67]  (0 ns)
+	'add' operation of DSP[129] ('add_ln1192_1') [129]  (0.831 ns)
+
+ <State 5>: 4.23ns
+The critical path consists of the following:
+	'add' operation of DSP[129] ('add_ln1192_1') [129]  (0.831 ns)
+	'add' operation ('add_ln1192_3') [133]  (1.12 ns)
+	'add' operation ('add_ln1192_7') [141]  (1.13 ns)
+	'add' operation ('add_ln1192') [157]  (1.14 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="conv_standard_1x1.cc" path="/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/CONV-IP/conv_standard_1x1.cc"/>
+    <originFiles name="dcl.h" path="/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/CONV-IP/dcl.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

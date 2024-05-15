@@ -1,0 +1,835 @@
+INFO-FLOW: Workspace /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1 opened at Tue May 14 15:45:06 EDT 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     import_lib /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.32 sec.
+Execute     import_lib /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus_fpv7 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     set_part xazu2eg-sfvc784-1LV-i 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/apps/xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/apps/xilinx/Vivado/2020.2/data:/apps/xilinx/Vitis_HLS/2020.2/data
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data single -quiet 
+DBG:HLSDevice: Trying to load device library: /apps/xilinx/Vitis_HLS/2020.2/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /apps/xilinx/Vivado/2020.2/data/parts/arch.xml
+Command       ap_part_info done; 1.24 sec.
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute       add_library xilinx/zynquplus/zynquplus:xazu2eg:-sfvc784:-1LV-i 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         ap_part_info -data single -name xazu2eg-sfvc784-1LV-i 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data resources 
+Execute         config_chip_info -resource {SLICE 8820} {LUT 47232} {FF 94464} {DSP 240} {BRAM 300} {URAM 0} 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute         config_chip_info -speed slow 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute         config_library_info -library zynquplus_slow 
+Execute         config_library_info -family zynquplus 
+Execute         config_library_info -part xazu2eg:-sfvc784:-1LV-i 
+Execute         import_lib /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynquplus_dsp48e2.hlp 
+Command         import_lib done; 0.2 sec.
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command         ap_source done; 0.11 sec.
+Command       add_library done; 0.33 sec.
+INFO: [HLS 200-10] Setting target device to 'xazu2eg-sfvc784-1LV-i'
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.58 sec.
+Execute     ap_part_info -data single -name xazu2eg-sfvc784-1LV-i 
+Execute     ap_part_info -name xazu2eg-sfvc784-1LV-i -data resources 
+Execute     config_chip_info -resource {SLICE 8820} {LUT 47232} {FF 94464} {DSP 240} {BRAM 300} {URAM 0} 
+Execute     ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute     config_chip_info -speed slow 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -m_axi_offset 
+Execute     get_config_rtl -register_reset_num 
+Command   open_solution done; 2.1 sec.
+Execute   set_part xazu2eg-sfvc784-1LV-i 
+INFO: [HLS 200-1510] Running: set_part xazu2eg-sfvc784-1LV-i 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/apps/xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/apps/xilinx/Vivado/2020.2/data:/apps/xilinx/Vitis_HLS/2020.2/data
+Execute     ap_part_info -name xazu2eg-sfvc784-1LV-i -data single -quiet 
+Execute     ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute     add_library xilinx/zynquplus/zynquplus:xazu2eg:-sfvc784:-1LV-i 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       ap_part_info -data single -name xazu2eg-sfvc784-1LV-i 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data resources 
+Execute       config_chip_info -resource {SLICE 8820} {LUT 47232} {FF 94464} {DSP 240} {BRAM 300} {URAM 0} 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute       config_chip_info -speed slow 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute       config_library_info -library zynquplus_slow 
+Execute       config_library_info -family zynquplus 
+Execute       config_library_info -part xazu2eg:-sfvc784:-1LV-i 
+Execute       import_lib /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynquplus/zynquplus 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynquplus_dsp48e2.hlp 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+Command     add_library done; 0.13 sec.
+Execute     ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.15 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 99.478 MB.
+INFO: [HLS 200-10] Analyzing design file 'CONV-IP/conv_standard_1x1.cc' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling CONV-IP/conv_standard_1x1.cc as C++
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang CONV-IP/conv_standard_1x1.cc -foptimization-record-file=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.cc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /apps/xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /apps/xilinx/Vitis_HLS/2020.2/common/technology/autopilot/39 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /apps/xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /apps/xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.cc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.cc.err.log 
+Command       ap_eval done; 1.28 sec.
+INFO-FLOW: Done: GCC PP 39 time: 1.3 seconds per iteration
+Execute       set_directive_top CONV_1x1 -name=CONV_1x1 
+INFO-FLOW: Setting directive 'TOP' name=CONV_1x1 
+INFO-FLOW: Setting directive 'TOP' name=CONV_1x1 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO-FLOW: Setting directive 'TOP' name=CONV_1x1 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc std=gnu++14 -target fpga  -directive=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/.systemc_flag -fix-errors /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.31 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc std=gnu++14 -target fpga  -directive=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/all.directive.json -fix-errors /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.08 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc std=gnu++14 -target fpga  
+INFO-FLOW: exec /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.2 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 2.3 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang-tidy.conv_standard_1x1.pp.0.cc.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang-tidy.conv_standard_1x1.pp.0.cc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang-tidy.conv_standard_1x1.pp.0.cc.err.log 
+Command         ap_eval done; 1.34 sec.
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Command       clang_tidy done; 1.45 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_standard_1x1.pp.0.cc.diag.yml /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_standard_1x1.pp.0.cc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_standard_1x1.pp.0.cc.err.log 
+Command       ap_eval done; 0.97 sec.
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.pp.0.cc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.pp.0.cc -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /apps/xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I /apps/xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.pp.0.cc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.conv_standard_1x1.pp.0.cc.err.log 
+Command       ap_eval done; 0.86 sec.
+WARNING: [HLS 207-5512] 'factor' in '#pragma HLS array_partition' is ignored: CONV-IP/conv_standard_1x1.cc:85:62
+WARNING: [HLS 207-5512] 'factor' in '#pragma HLS array_partition' is ignored: CONV-IP/conv_standard_1x1.cc:86:62
+WARNING: [HLS 207-5528] unexpected pragma argument 'instances', expects function/operation: CONV-IP/conv_standard_1x1.cc:89:24
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.7 seconds. CPU system time: 0.35 seconds. Elapsed time: 8.3 seconds; current allocated memory: 100.667 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.0.bc -args  "/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.g.bc"  
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/conv_standard_1x1.g.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.0.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.1.lower.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
+Command         ap_eval done; 0.75 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.75 sec.
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsm_39.bc /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libhlsmc++_39.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.2.m1.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
+Command         ap_eval done; 2.78 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.78 sec.
+Execute       run_link_or_opt -opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=CONV_1x1 -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=CONV_1x1 -reflow-float-conversion -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
+Command         ap_eval done; 0.76 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.77 sec.
+Execute       run_link_or_opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /apps/xilinx/Vitis_HLS/2020.2/lnx64/lib/libfloatconversion_39.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.4.m2.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
+Command         ap_eval done; 0.13 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.13 sec.
+Execute       run_link_or_opt -opt -out /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=CONV_1x1 
+Execute         ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
+INFO-FLOW: 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_interface -default_slave_interface 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_interface -m_axi_offset 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_auto_max_ports 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -s_axilite_data64 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_compile -pragma_strict_mode 
+Execute       get_config_compile -pipeline_style 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr /apps/xilinx/Vitis_HLS/2020.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=CONV_1x1 -mllvm -hls-db-dir -mllvm /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=off -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -disable-inlined-alloca-merging=true -x ir /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.lto.bc > /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
+Command       ap_eval done; 6.4 sec.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_102_6' (CONV-IP/conv_standard_1x1.cc:102:23) in function 'CONV_1x1' completely with a factor of 16 (CONV-IP/conv_standard_1x1.cc:102:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_124_7' (CONV-IP/conv_standard_1x1.cc:124:23) in function 'CONV_1x1' completely with a factor of 16 (CONV-IP/conv_standard_1x1.cc:124:23)
+INFO: [HLS 214-248] cyclic partitioned array 'bottom' on dimension 1 with 16 (CONV-IP/conv_standard_1x1.cc:81:1)
+INFO: [HLS 214-248] cyclic partitioned array 't' on dimension 1 with 16 (CONV-IP/conv_standard_1x1.cc:83:9)
+INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 17.49 seconds. CPU system time: 0.42 seconds. Elapsed time: 19.54 seconds; current allocated memory: 120.578 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 120.579 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top CONV_1x1 -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.0.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.51 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.53 seconds; current allocated memory: 133.712 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.1.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.6 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.2.prechk.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.65 seconds. CPU system time: 0 seconds. Elapsed time: 0.72 seconds; current allocated memory: 143.546 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.g.1.bc to /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.1.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_92_2' (CONV-IP/conv_standard_1x1.cc:92) in function 'CONV_1x1' automatically.
+INFO: [XFORM 203-101] Partitioning array 'weight_buf.V' (CONV-IP/conv_standard_1x1.cc:80) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'weight_buf.V' (CONV-IP/conv_standard_1x1.cc:80) in dimension 2 completely.
+Command         transform done; 2.93 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.1.tmp.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (CONV-IP/conv_standard_1x1.cc:97:28) in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock in function 'CONV_1x1'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'compute_engine_16' (CONV-IP/conv_standard_1x1.cc:71:2)...15 expression(s) balanced.
+Command         transform done; 1.9 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 4.67 seconds. CPU system time: 0.02 seconds. Elapsed time: 4.85 seconds; current allocated memory: 188.281 MB.
+Execute         get_config_compile -enable_loop_extract 
+Execute         get_config_compile -disable_auto_rewind 
+Execute         get_config_compile -enable_auto_rewind 
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.2.bc -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_91_1' (CONV-IP/conv_standard_1x1.cc:91:27) in function 'CONV_1x1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_96_3' (CONV-IP/conv_standard_1x1.cc:96:27) in function 'CONV_1x1'.
+Command         transform done; 3.56 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 3.53 seconds. CPU system time: 0 seconds. Elapsed time: 3.56 seconds; current allocated memory: 205.750 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 9.68 sec.
+Command     elaborate done; 37.59 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'CONV_1x1' ...
+Execute       ap_set_top_model CONV_1x1 
+Execute       get_model_list CONV_1x1 -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model CONV_1x1 
+Execute       preproc_iomode -model compute_engine_16 
+Execute       get_model_list CONV_1x1 -filter all-wo-channel 
+INFO-FLOW: Model list for configure: compute_engine_16 CONV_1x1
+INFO-FLOW: Configuring Module : compute_engine_16 ...
+Execute       set_default_model compute_engine_16 
+Execute       apply_spec_resource_limit compute_engine_16 
+INFO-FLOW: Configuring Module : CONV_1x1 ...
+Execute       set_default_model CONV_1x1 
+Execute       apply_spec_resource_limit CONV_1x1 
+INFO-FLOW: Model list for preprocess: compute_engine_16 CONV_1x1
+INFO-FLOW: Preprocessing Module: compute_engine_16 ...
+Execute       set_default_model compute_engine_16 
+Execute       cdfg_preprocess -model compute_engine_16 
+Execute       rtl_gen_preprocess compute_engine_16 
+INFO-FLOW: Preprocessing Module: CONV_1x1 ...
+Execute       set_default_model CONV_1x1 
+Execute       cdfg_preprocess -model CONV_1x1 
+Execute       rtl_gen_preprocess CONV_1x1 
+INFO-FLOW: Model list for synthesis: compute_engine_16 CONV_1x1
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_engine_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model compute_engine_16 
+Execute       schedule -model compute_engine_16 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_15) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_13) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_11) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_9) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_7) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_5) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_3) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_14) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_12) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_10) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_8) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_6) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_4) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=r_V_1) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'compute_engine_16'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, function 'compute_engine_16'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.17 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.27 seconds; current allocated memory: 208.045 MB.
+Execute       syn_report -verbosereport -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_engine_16.
+Execute       set_default_model compute_engine_16 
+Execute       bind -model compute_engine_16 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.17 seconds; current allocated memory: 208.593 MB.
+Execute       syn_report -verbosereport -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.12 sec.
+Execute       db_write -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.bind.adb -f 
+INFO-FLOW: Finish binding compute_engine_16.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'CONV_1x1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model CONV_1x1 
+Execute       schedule -model CONV_1x1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln106_1) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln106) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln97) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_91_1_VITIS_LOOP_92_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_91_1_VITIS_LOOP_92_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_96_3_VITIS_LOOP_97_4'.
+WARNING: [HLS 200-880] The II Violation in module 'CONV_1x1' (loop 'VITIS_LOOP_96_3_VITIS_LOOP_97_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('top_0_addr_write_ln415') of variable '__Val2__' on array 'top_0' and 'load' operation ('lhs') on array 'top_0'.
+WARNING: [HLS 200-880] The II Violation in module 'CONV_1x1' (loop 'VITIS_LOOP_96_3_VITIS_LOOP_97_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('top_0_addr_write_ln390') of constant 32768 on array 'top_0' and 'load' operation ('lhs') on array 'top_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 28, loop 'VITIS_LOOP_96_3_VITIS_LOOP_97_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.27 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.31 seconds. CPU system time: 0.08 seconds. Elapsed time: 1.42 seconds; current allocated memory: 214.594 MB.
+Execute       syn_report -verbosereport -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.42 sec.
+Execute       db_write -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.sched.adb -f 
+Command       db_write done; 0.17 sec.
+INFO-FLOW: Finish scheduling CONV_1x1.
+Execute       set_default_model CONV_1x1 
+Execute       bind -model CONV_1x1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.99 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.58 seconds; current allocated memory: 224.765 MB.
+Execute       syn_report -verbosereport -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 1.71 sec.
+Execute       db_write -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.bind.adb -f 
+Command       db_write done; 0.21 sec.
+INFO-FLOW: Finish binding CONV_1x1.
+Execute       get_model_list CONV_1x1 -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess compute_engine_16 
+Execute       rtl_gen_preprocess CONV_1x1 
+INFO-FLOW: Model list for RTL generation: compute_engine_16 CONV_1x1
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_engine_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model compute_engine_16 -top_prefix CONV_1x1_ -sub_prefix CONV_1x1_ -mg_file /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_8s_24s_25_4_0': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_16s_8s_24_4_0': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_engine_16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.83 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.02 seconds; current allocated memory: 225.794 MB.
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl compute_engine_16 -style xilinx -f -lang vhdl -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/vhdl/CONV_1x1_compute_engine_16 
+Execute       gen_rtl compute_engine_16 -style xilinx -f -lang vlog -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/verilog/CONV_1x1_compute_engine_16 
+Execute       syn_report -csynth -model compute_engine_16 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/report/compute_engine_16_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model compute_engine_16 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/report/compute_engine_16_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model compute_engine_16 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.14 sec.
+Execute       db_write -model compute_engine_16 -f -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.adb 
+Execute       gen_tb_info compute_engine_16 -p /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'CONV_1x1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model CONV_1x1 -top_prefix  -sub_prefix CONV_1x1_ -mg_file /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/bottom_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_8' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_9' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_10' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_11' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_12' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_13' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_14' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/top_15' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'CONV_1x1/weights' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'CONV_1x1' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_5ns_7ns_7s_10_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_5ns_8ns_7ns_11_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_11ns_13ns_23_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_10ns_7ns_10_14_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'CONV_1x1'.
+Command       create_rtl_model done; 0.7 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.56 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.95 seconds; current allocated memory: 237.802 MB.
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       gen_rtl CONV_1x1 -istop -style xilinx -f -lang vhdl -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/vhdl/CONV_1x1 
+Command       gen_rtl done; 0.9 sec.
+Execute       gen_rtl CONV_1x1 -istop -style xilinx -f -lang vlog -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/verilog/CONV_1x1 
+Command       gen_rtl done; 0.46 sec.
+Execute       syn_report -csynth -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/report/CONV_1x1_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.46 sec.
+Execute       syn_report -rtlxml -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/report/CONV_1x1_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.44 sec.
+Execute       syn_report -verbosereport -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 2.14 sec.
+Execute       db_write -model CONV_1x1 -f -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.adb 
+Command       db_write done; 0.67 sec.
+Execute       gen_tb_info CONV_1x1 -p /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1 
+Execute       export_constraint_db -f -tool general -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.constraint.tcl 
+Execute       syn_report -designview -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.design.xml 
+Command       syn_report done; 0.91 sec.
+Execute       syn_report -csynthDesign -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model CONV_1x1 -o /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks CONV_1x1 
+Execute       get_config_export -vivado_clock 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       sc_get_portdomain CONV_1x1 
+INFO-FLOW: Model list for RTL component generation: compute_engine_16 CONV_1x1
+INFO-FLOW: Handling components in module [compute_engine_16] ... 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+INFO-FLOW: Found component CONV_1x1_mul_mul_16s_8s_24_4_0.
+INFO-FLOW: Append model CONV_1x1_mul_mul_16s_8s_24_4_0
+INFO-FLOW: Found component CONV_1x1_mac_muladd_16s_8s_24s_25_4_0.
+INFO-FLOW: Append model CONV_1x1_mac_muladd_16s_8s_24s_25_4_0
+INFO-FLOW: Handling components in module [CONV_1x1] ... 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+INFO-FLOW: Found component CONV_1x1_urem_10ns_7ns_10_14_1.
+INFO-FLOW: Append model CONV_1x1_urem_10ns_7ns_10_14_1
+INFO-FLOW: Found component CONV_1x1_mac_muladd_5ns_8ns_7ns_11_4_1.
+INFO-FLOW: Append model CONV_1x1_mac_muladd_5ns_8ns_7ns_11_4_1
+INFO-FLOW: Found component CONV_1x1_mul_mul_11ns_13ns_23_4_1.
+INFO-FLOW: Append model CONV_1x1_mul_mul_11ns_13ns_23_4_1
+INFO-FLOW: Found component CONV_1x1_mac_muladd_5ns_7ns_7s_10_4_1.
+INFO-FLOW: Append model CONV_1x1_mac_muladd_5ns_7ns_7s_10_4_1
+INFO-FLOW: Append model compute_engine_16
+INFO-FLOW: Append model CONV_1x1
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: CONV_1x1_mul_mul_16s_8s_24_4_0 CONV_1x1_mac_muladd_16s_8s_24s_25_4_0 CONV_1x1_urem_10ns_7ns_10_14_1 CONV_1x1_mac_muladd_5ns_8ns_7ns_11_4_1 CONV_1x1_mul_mul_11ns_13ns_23_4_1 CONV_1x1_mac_muladd_5ns_7ns_7s_10_4_1 compute_engine_16 CONV_1x1
+INFO-FLOW: To file: write model CONV_1x1_mul_mul_16s_8s_24_4_0
+INFO-FLOW: To file: write model CONV_1x1_mac_muladd_16s_8s_24s_25_4_0
+INFO-FLOW: To file: write model CONV_1x1_urem_10ns_7ns_10_14_1
+INFO-FLOW: To file: write model CONV_1x1_mac_muladd_5ns_8ns_7ns_11_4_1
+INFO-FLOW: To file: write model CONV_1x1_mul_mul_11ns_13ns_23_4_1
+INFO-FLOW: To file: write model CONV_1x1_mac_muladd_5ns_7ns_7s_10_4_1
+INFO-FLOW: To file: write model compute_engine_16
+INFO-FLOW: To file: write model CONV_1x1
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_top 
+Execute       get_config_export -ipname 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): CONV_1x1
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'CONV_1x1_urem_10ns_7ns_10_14_1_div'
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info 
+Command       ap_source done; 0.11 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /apps/xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=CONV_1x1 xml_exists=0
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute         ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Command       ap_source done; 0.4 sec.
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.compgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.tcl 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.constraint.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=68
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=33
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=8 #gSsdmPorts=68
+Execute       source /apps/xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.rtl_wrap.cfg.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.compgen.dataonly.tcl 
+Execute       get_config_export -format 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/compute_engine_16.tbgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.tbgen.tcl 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data names -quiet 
+Execute       ap_part_info -name xazu2eg-sfvc784-1LV-i -data info -quiet 
+Execute       get_solution -flow_target 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.constraint.tcl 
+Execute       sc_get_clocks CONV_1x1 
+Execute       source /ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8.31 seconds. CPU system time: 0.22 seconds. Elapsed time: 9.96 seconds; current allocated memory: 270.800 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for CONV_1x1.
+INFO: [VLOG 209-307] Generating Verilog RTL for CONV_1x1.
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report append design.xml content design_xml=/ecel/UFAD/ibnatz16/Documents/HLS/Open-Source-IPs/conv_HLS/solution1/.autopilot/db/CONV_1x1.design.xml
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report json2reportxml
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report done
+Execute       syn_report -model CONV_1x1 -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 196.54 MHz
+Command     autosyn done; 17.15 sec.
+Command   csynth_design done; 54.74 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 46.84 seconds. CPU system time: 1.28 seconds. Elapsed time: 54.74 seconds; current allocated memory: 273.593 MB.
+Command ap_source done; 57.02 sec.
+Execute cleanup_all 

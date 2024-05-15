@@ -1,0 +1,226 @@
+
+
+================================================================
+== Vitis HLS Report for 'compute_engine_16'
+================================================================
+* Date:           Tue May 14 15:45:51 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        conv_HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xazu2eg-sfvc784-1LV-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.230 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        4|        4|  40.000 ns|  40.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+-------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF  |  LUT  | URAM|
++-----------------+---------+-----+-------+-------+-----+
+|DSP              |        -|   16|      -|      -|    -|
+|Expression       |        -|    -|      0|    235|    -|
+|FIFO             |        -|    -|      -|      -|    -|
+|Instance         |        -|    -|      -|      -|    -|
+|Memory           |        -|    -|      -|      -|    -|
+|Multiplexer      |        -|    -|      -|      9|    -|
+|Register         |        -|    -|    605|      -|    -|
++-----------------+---------+-----+-------+-------+-----+
+|Total            |        0|   16|    605|    244|    0|
++-----------------+---------+-----+-------+-------+-----+
+|Available        |      300|  240|  94464|  47232|    0|
++-----------------+---------+-----+-------+-------+-----+
+|Utilization (%)  |        0|    6|     ~0|     ~0|    0|
++-----------------+---------+-----+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    +----------------------------------+------------------------------+--------------+
+    |             Instance             |            Module            |  Expression  |
+    +----------------------------------+------------------------------+--------------+
+    |mac_muladd_16s_8s_24s_25_4_0_U9   |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U10  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U11  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U12  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U13  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U14  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U15  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mac_muladd_16s_8s_24s_25_4_0_U16  |mac_muladd_16s_8s_24s_25_4_0  |  i0 + i1 * i2|
+    |mul_mul_16s_8s_24_4_0_U1          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U2          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U3          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U4          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U5          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U6          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U7          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    |mul_mul_16s_8s_24_4_0_U8          |mul_mul_16s_8s_24_4_0         |       i0 * i1|
+    +----------------------------------+------------------------------+--------------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln1192_10_fu_448_p2  |         +|   0|  0|  33|          26|          26|
+    |add_ln1192_13_fu_464_p2  |         +|   0|  0|  33|          26|          26|
+    |add_ln1192_14_fu_474_p2  |         +|   0|  0|  34|          27|          27|
+    |add_ln1192_3_fu_406_p2   |         +|   0|  0|  33|          26|          26|
+    |add_ln1192_6_fu_422_p2   |         +|   0|  0|  33|          26|          26|
+    |add_ln1192_7_fu_432_p2   |         +|   0|  0|  34|          27|          27|
+    |add_ln1192_fu_484_p2     |         +|   0|  0|  35|          28|          28|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0| 235|         186|         186|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_return  |   9|          2|   28|         56|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |   9|          2|   28|         56|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------+----+----+-----+-----------+
+    |        Name       | FF | LUT| Bits| Const Bits|
+    +-------------------+----+----+-----+-----------+
+    |ap_ce_reg          |   1|   0|    1|          0|
+    |ap_return_int_reg  |  28|   0|   31|          3|
+    |b0_int_reg         |  16|   0|   16|          0|
+    |b0_read_reg_696    |  16|   0|   16|          0|
+    |b10_int_reg        |  16|   0|   16|          0|
+    |b11_int_reg        |  16|   0|   16|          0|
+    |b11_read_reg_646   |  16|   0|   16|          0|
+    |b12_int_reg        |  16|   0|   16|          0|
+    |b13_int_reg        |  16|   0|   16|          0|
+    |b13_read_reg_636   |  16|   0|   16|          0|
+    |b14_int_reg        |  16|   0|   16|          0|
+    |b15_int_reg        |  16|   0|   16|          0|
+    |b15_read_reg_626   |  16|   0|   16|          0|
+    |b1_int_reg         |  16|   0|   16|          0|
+    |b2_int_reg         |  16|   0|   16|          0|
+    |b3_int_reg         |  16|   0|   16|          0|
+    |b3_read_reg_686    |  16|   0|   16|          0|
+    |b4_int_reg         |  16|   0|   16|          0|
+    |b5_int_reg         |  16|   0|   16|          0|
+    |b5_read_reg_676    |  16|   0|   16|          0|
+    |b6_int_reg         |  16|   0|   16|          0|
+    |b7_int_reg         |  16|   0|   16|          0|
+    |b7_read_reg_666    |  16|   0|   16|          0|
+    |b8_int_reg         |  16|   0|   16|          0|
+    |b9_int_reg         |  16|   0|   16|          0|
+    |b9_read_reg_656    |  16|   0|   16|          0|
+    |w0_int_reg         |   8|   0|    8|          0|
+    |w0_read_reg_701    |   8|   0|    8|          0|
+    |w10_int_reg        |   8|   0|    8|          0|
+    |w11_int_reg        |   8|   0|    8|          0|
+    |w11_read_reg_651   |   8|   0|    8|          0|
+    |w12_int_reg        |   8|   0|    8|          0|
+    |w13_int_reg        |   8|   0|    8|          0|
+    |w13_read_reg_641   |   8|   0|    8|          0|
+    |w14_int_reg        |   8|   0|    8|          0|
+    |w15_int_reg        |   8|   0|    8|          0|
+    |w15_read_reg_631   |   8|   0|    8|          0|
+    |w1_int_reg         |   8|   0|    8|          0|
+    |w2_int_reg         |   8|   0|    8|          0|
+    |w3_int_reg         |   8|   0|    8|          0|
+    |w3_read_reg_691    |   8|   0|    8|          0|
+    |w4_int_reg         |   8|   0|    8|          0|
+    |w5_int_reg         |   8|   0|    8|          0|
+    |w5_read_reg_681    |   8|   0|    8|          0|
+    |w6_int_reg         |   8|   0|    8|          0|
+    |w7_int_reg         |   8|   0|    8|          0|
+    |w7_read_reg_671    |   8|   0|    8|          0|
+    |w8_int_reg         |   8|   0|    8|          0|
+    |w9_int_reg         |   8|   0|    8|          0|
+    |w9_read_reg_661    |   8|   0|    8|          0|
+    +-------------------+----+----+-----+-----------+
+    |Total              | 605|   0|  608|          3|
+    +-------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------+-----+-----+------------+-------------------+--------------+
+| RTL Ports | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++-----------+-----+-----+------------+-------------------+--------------+
+|ap_clk     |   in|    1|  ap_ctrl_hs|  compute_engine_16|  return value|
+|ap_rst     |   in|    1|  ap_ctrl_hs|  compute_engine_16|  return value|
+|ap_return  |  out|   31|  ap_ctrl_hs|  compute_engine_16|  return value|
+|ap_ce      |   in|    1|  ap_ctrl_hs|  compute_engine_16|  return value|
+|w0         |   in|    8|     ap_none|                 w0|        scalar|
+|b0         |   in|   16|     ap_none|                 b0|        scalar|
+|w1         |   in|    8|     ap_none|                 w1|        scalar|
+|b1         |   in|   16|     ap_none|                 b1|        scalar|
+|w2         |   in|    8|     ap_none|                 w2|        scalar|
+|b2         |   in|   16|     ap_none|                 b2|        scalar|
+|w3         |   in|    8|     ap_none|                 w3|        scalar|
+|b3         |   in|   16|     ap_none|                 b3|        scalar|
+|w4         |   in|    8|     ap_none|                 w4|        scalar|
+|b4         |   in|   16|     ap_none|                 b4|        scalar|
+|w5         |   in|    8|     ap_none|                 w5|        scalar|
+|b5         |   in|   16|     ap_none|                 b5|        scalar|
+|w6         |   in|    8|     ap_none|                 w6|        scalar|
+|b6         |   in|   16|     ap_none|                 b6|        scalar|
+|w7         |   in|    8|     ap_none|                 w7|        scalar|
+|b7         |   in|   16|     ap_none|                 b7|        scalar|
+|w8         |   in|    8|     ap_none|                 w8|        scalar|
+|b8         |   in|   16|     ap_none|                 b8|        scalar|
+|w9         |   in|    8|     ap_none|                 w9|        scalar|
+|b9         |   in|   16|     ap_none|                 b9|        scalar|
+|w10        |   in|    8|     ap_none|                w10|        scalar|
+|b10        |   in|   16|     ap_none|                b10|        scalar|
+|w11        |   in|    8|     ap_none|                w11|        scalar|
+|b11        |   in|   16|     ap_none|                b11|        scalar|
+|w12        |   in|    8|     ap_none|                w12|        scalar|
+|b12        |   in|   16|     ap_none|                b12|        scalar|
+|w13        |   in|    8|     ap_none|                w13|        scalar|
+|b13        |   in|   16|     ap_none|                b13|        scalar|
+|w14        |   in|    8|     ap_none|                w14|        scalar|
+|b14        |   in|   16|     ap_none|                b14|        scalar|
+|w15        |   in|    8|     ap_none|                w15|        scalar|
+|b15        |   in|   16|     ap_none|                b15|        scalar|
++-----------+-----+-----+------------+-------------------+--------------+
+
